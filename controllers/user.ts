@@ -42,7 +42,7 @@ router.post('/login', async (req: Request, res: Response) => {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
         
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET as string);
+        const token = jwt.sign({ userId: user._id }, "sai");
         res.json({ token,name:user.username });
     } catch (error) {
         console.error('Error logging in:', error);
