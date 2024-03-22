@@ -29,7 +29,11 @@ app.use(bodyParser.json());
 // Routes
 app.use('/categories',verifyToken,CategoryRoute)
 app.use('/user',UserRoute)
-
+app.get("/",(req,res)=>{
+  res.send({
+  m:  "server is start"
+  })
+})
 const dbUrl:any = env.DB_URL;
 console.log(dbUrl)
 
