@@ -33,7 +33,7 @@ app.use('/user',UserRoute)
 const dbUrl:any = env.DB_URL;
 console.log(dbUrl)
 
- dataBaseConnection(dbUrl).then((e)=>{
+ dataBaseConnection("mongodb+srv://naseebshah:naseebshahdeen@cluster0.b2nqg.mongodb.net/turnover?retryWrites=true&w=majority").then((e)=>{
     app.listen(port, () => {
 
         console.log(`Server is listening on port ${port}`);
