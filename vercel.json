@@ -1,0 +1,30 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.ts",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": ["**/*.ts"],
+          "typescript": {
+            "tsconfigPath": "./tsconfig.json"
+          }
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.ts"
+      }
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "build": {
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  }
+  
